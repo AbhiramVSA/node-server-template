@@ -38,7 +38,7 @@
   "scripts": {
     "start": "yarn run build; node ./dist/index.js",
     "build": "rm -rf ./dist; tsc",
-    "nodemon": "tsc; ./node_modules/nodemon/bin/nodemon.js index",
+    "nodemon": "nodemon ./dist/index.js",
     "test": "mocha ./test/*.e2e.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
