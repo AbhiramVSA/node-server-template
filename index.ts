@@ -1,6 +1,6 @@
 /* eslint-disable import/first  */
 import http from 'http';
-
+import path from 'path';
 import { Server } from 'socket.io';
 import express from 'express';
 import log4js from 'log4js';
@@ -23,7 +23,7 @@ mongoose.set('strictQuery', false);
     .catch(err => logger.error({ err }));
 
 // you can specify a path `${origin}/yourPath` or by default it's `${origin}`
-app.use(express.static(files));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routers);
 app.set('view engine', 'ejs'); // by default ejs files in root's 'views' directory
 server.listen(port, () => logger.info(`app listen ${port} port`));
